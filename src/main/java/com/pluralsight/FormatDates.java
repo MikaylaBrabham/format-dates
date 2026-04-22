@@ -6,32 +6,16 @@ public class FormatDates {
     public static void main(String[] args) {
 
         //Get the local date and time right now
-        LocalDateTime dateTimeNow = LocalDateTime.now();
-        System.out.println("Today's current time and date without any formatting is: " + dateTimeNow);
+        LocalDateTime dateTime1 = LocalDateTime.now();
+        System.out.println("Today is: " + dateTime1);
 
+        //Create a formatter for the date and time for mm/dd/yyyy
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String formattedDate1 = dateTime1.format(formatter1);
 
-
-        //get the local date and time in mm/dd/yyyy format
-        DateTimeFormatter formatDateTime1 = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        String formattedDateTime1 = dateTimeNow.format(formatDateTime1);
-        System.out.println("Today is: " + formattedDateTime1);
-
-        //get the local date and time in yyyy-mm-yy format
-        DateTimeFormatter formatDateTime2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDateTime2 = dateTimeNow.format(formatDateTime2);
-        System.out.println("Today is: " + formattedDateTime2);
-
-        //get the local date and time in dayofmonth dd, yyyy
-
-        //get the local date and time in dayofmonth, partialmonth dd, yyyy time in civilian hours xx:xx
-
-        //format the current day, date, and time rightnow
-        DateTimeFormatter formatDateTime =
-            DateTimeFormatter.ofPattern("EEEE, MMM dd, yyyy HH:mm:ss");
-
-        //display the current day and time with my formatting
-        String formattedDateTime5 = dateTimeNow.format(formatDateTime);
-        System.out.println("Today is: " + formattedDateTime5);
+        //create a formatter for the date and time for yyyy-mm-dd
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate2 = dateTime1.format(formatter2);
 
     }
 }
